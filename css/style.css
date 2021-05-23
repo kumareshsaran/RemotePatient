@@ -11,10 +11,30 @@ body{
 .myNavbar{
     background-color: transparent;
     border:0px;
-    padding: 20px 0;
+    padding: 5px 0;
     margin-bottom: 40px;
 }
-.myNavbar .navbar-right a,.myNavbar .navbar-right a:hover{
+.navbar-nav li a{
+    transition: all 0.5s linear;
+    position: relative;
+}
+.navbar-nav li a:hover{
+    color: #04A6C2!important
+}
+.navbar-nav li .nav-item::before{
+    content: '';
+    width: 0;
+    height: 2px;
+    border-bottom: 2px solid #04A6C2!important;
+    position: absolute;
+    bottom: 5px;
+    transition: all 0.5s linear;
+}
+.navbar-nav > li .nav-item:hover::before{
+    width: 50px;
+    border-bottom: 2px solid #04A6C2!important;
+}
+.myNavbar .navbar-right a{
     color: #8F8686!important;
     font-size:16px;
     font-family: 'Poppins', sans-serif;
@@ -23,7 +43,7 @@ body{
 .myNavbar  .navbar-brand,.myNavbar  .navbar-brand:hover{
     color: #04A6C2;
     font-size: 28px;
-    font-weight:700;
+    font-weight:600;
 }
 .myNavbar .navbar-right a.active,.myNavbar .navbar-right a.active:hover{
     color: #04A6C2!important;
@@ -62,7 +82,6 @@ body{
     text-align: left;
     width: 550px;
 }
-.pathway-process .image1,
 .banner-section .image1{
     background-image: url('../assets/images/Subtract.svg');
     width: 180px;
@@ -73,13 +92,6 @@ body{
     position: absolute;
     left: -49px;
     top: 280px;
-}
-.pathway-process .first {
-    margin-bottom: 50px;
-}
-.pathway-process .image1{
-    left: 0px;
-    top: 390px;
 }
 .banner-section .btn-contact{
     background-color: #04A6C2;
@@ -131,7 +143,6 @@ body{
     color:#04A6C2;
     font-size:38px;
     width:100%;
-    font-weight: 700;
     text-align: center;
     font-family: 'Poppins', sans-serif;
     margin-bottom:30px;
@@ -146,35 +157,46 @@ body{
     line-height:24px;
 }
 
+/* video custom play button */
+.video {
+  width: 100%;
+}
+.rpm-banner{    
+  position: relative;
+}
+.playpause {
+  background-image:url('../assets/images/playicon.svg');;
+  background-repeat:no-repeat;
+  width:50%;
+  height:50%;
+  position:absolute;
+  left:0%;
+  right:0%;
+  top:0%;
+  bottom:0%;
+  margin:auto;
+  background-size:contain;
+  background-position: center;
+}
+/* video custom play button end */
+
 
 .rpm-banner{
     padding:40px 0px;
 }
 .rpm-banner img{
     width: 100%;
-    height: 768px;
+    height: 800px;
     object-fit: cover;
+    transition: all 0.5s linear;
 }
-.pathway-process .first .content:after{
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    filter: blur(1);
+.rpm-banner img:hover{
+   transform: scale(2);
 }
 
-[data-content]:before {
-    content: attr(data-content);
-    font-size: 120px;
-    font-weight: 700;
-    color: #00000026;
-    position: absolute;
-    right: 0;
-    top: -90px;
-    z-index: 0;
-    mix-blend-mode: color;
+.content:hover{
+transform: translateY(-20px);
 }
-
 .rpm-process{
     padding:40px 0px;
 }
@@ -182,7 +204,6 @@ body{
     color:#04A6C2;
     font-size:38px;
     width:100%;
-    font-weight: 700;
     text-align: center;
     font-family: 'Poppins', sans-serif;
     margin-bottom:30px;
@@ -230,7 +251,6 @@ body{
     color:#04A6C2;
     font-size:38px;
     width:100%;
-    font-weight: 700;
     text-align: center;
     font-family: 'Poppins', sans-serif;
     margin-bottom:30px;
@@ -240,11 +260,26 @@ body{
     font-size:16px;
     color: #595959;
     font-family: 'Poppins', sans-serif;
-    /* margin:0 auto; */
+    margin:0 auto;
     line-height:24px;
-    margin-bottom:100px;
+    margin-bottom:30px;
 }
 .pathway-process .content{
+    /* background: linear-gradient(90deg, rgba(0, 65, 106, 0.56) 0%, rgba(228, 229, 230, 0.5) 100%);
+    backdrop-filter: blur(5px);
+    float: left;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    padding: 35px 40px;
+    border-radius: 6px;
+
+    margin-bottom: 20px;
+    height: 210px;
+    margin-bottom:40px;
+    position: relative;
+    z-index: 99;
+    transition: all .5s linear; */
     background: linear-gradient(90deg, rgba(0, 65, 106, 0.56) 0%, rgba(228, 229, 230, 0.5) 100%);
     backdrop-filter: blur(5px);
     width: 350px;
@@ -260,17 +295,18 @@ body{
     position: relative;
     z-index: 99;
 }
+pathway-process .first{
+    margin-top:80px;
+}
 .pathway-process .first .content{
     margin-bottom:80px!important;
 }
 .pathway-process .content h3{
     font-size: 28px;
-    width: 100%;
     margin: 0 auto;
-    text-align: left;
+    text-align: center;
     color: #fff;
     padding: 10px 0;
-    font-weight: 700;
     margin-bottom: 20px;
 }
 .pathway-process .content p{
@@ -301,7 +337,6 @@ body{
 .choose-us h2{
     color:#04A6C2;
     font-size:38px;
-    font-weight: 700;
     width:100%;
     text-align: center;
     font-family: 'Poppins', sans-serif;
@@ -317,10 +352,16 @@ body{
     margin-bottom:30px;
 }
 .choose-us .col-sm-8 h2{
-    text-align: left;
+    /* text-align: left;
     font-weight: bold;
-    font-size: 36px;
-    margin-bottom:20px;
+    font-size: 72px;
+    margin-bottom:20px; */
+
+    text-align: left;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
 }
 .choose-us  .col-sm-8 p{
     text-align:left;
@@ -329,14 +370,14 @@ body{
 }
 
 .choose-us  .col-sm-4 h1{
-    text-align:center;
-    font-size:56px;
-    font-weight:700;
-    background: rgb(229,93,135);
-    background: linear-gradient(98deg, rgba(229,93,135,1) 35%, rgba(95,195,228,1) 70%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    padding-top: 28px;
+  text-align:center;
+  font-size:56px;
+  font-weight:700;
+  background: rgb(229,93,135);
+  background: linear-gradient(98deg, rgba(229,93,135,1) 35%, rgba(95,195,228,1) 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-top: 28px;
 }
 
 .get-in-touch{
@@ -347,7 +388,6 @@ body{
     color:#04A6C2;
     font-size:38px;
     width:100%;
-    font-weight: 700;
     text-align: center;
     font-family: 'Poppins', sans-serif;
     margin-bottom:30px;
@@ -402,28 +442,7 @@ body{
 
 /* Animations */
 
-/* video custom play button */
-.video {
-    width: 100%;
-}
-.rpm-banner{    
-    position: relative;
-}
-.playpause {
-    background-image:url('../assets/images/playicon.svg');;
-    background-repeat:no-repeat;
-    width:50%;
-    height:50%;
-    position:absolute;
-    left:0%;
-    right:0%;
-    top:0%;
-    bottom:0%;
-    margin:auto;
-    background-size:contain;
-    background-position: center;
-}
-/* video custom play button end */
+
 
   /**Styling scrollable elements*/
   
@@ -498,4 +517,98 @@ body{
     100% {
       opacity: 1;
     }
+  }
+
+  .loader,
+.loader:before,
+.loader:after {
+  background: #1795b5;
+  -webkit-animation: load1 1s infinite ease-in-out;
+  animation: load1 1s infinite ease-in-out;
+  width: 1em;
+  height: 4em;
+}
+.loader {
+  color: #1795b5;
+  text-indent: -9999em;
+  margin: 88px auto;
+  position: relative;
+  font-size: 11px;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+  position: absolute;
+  top: 0;
+  content: '';
+}
+.loader:before {
+  left: -1.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.loader:after {
+  left: 1.5em;
+}
+@-webkit-keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em;
+  }
+}
+@keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em;
+  }
+}
+.load-container {
+height: 100vh;
+width: 100vw;
+display: grid;
+place-items: center;
+position: fixed;
+left: 0;
+background: #ffffffeb;
+z-index: 999;
+}
+.navbar{
+   position:sticky;
+   top: 0;
+   z-index:999;
+   background: #F4FCFD;
+   width: 100%;
+}
+
+video{
+    width: 100%;
+    height: 100%;
+  }
+
+  .pathway-process .content h1{
+    text-align: center;
+    font-size: 60px;
+    font-weight: 800;
+    border-radius: 6px;
+    /* -webkit-background-clip: text; */
+    position: absolute;
+    right: -12px;
+    top: -50px;
+    color: #8f86869e!important;
   }
