@@ -5,13 +5,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="js/custom.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body>
-
+  <div class="load-container load1" id="loading"><div class="loader">Loading...</div></div>
   <nav class="navbar navbar-inverse myNavbar">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -25,10 +28,10 @@
       <div class="collapse navbar-collapse" id="myNavbar">  
         <ul class="nav navbar-nav navbar-right">
           <li><a class="active" href="#">Home</a></li>
-          <li><a href="#">Providers</a></li>
-          <li><a href="#">Payers</a></li>
-          <li><a href="#">Payviders</a></li>
-          <li><a href="#">Employers</a></li>
+          <li><a href="#" class="nav-item">Providers</a></li>
+          <li><a href="#" class="nav-item">Payers</a></li>
+          <li><a href="#" class="nav-item">Payviders</a></li>
+          <li><a href="#" class="nav-item">Employers</a></li>
           <li><a href="#"><img src="assets/images/Category.png"></a></li>
         </ul>
       </div>
@@ -38,18 +41,18 @@
   <section class="banner-section">
     <div class="container-fluid">
         <div class="col-sm-6 col-md-6 p-l-0">
-            <h1 class="slide-left">Remote Patient Monitoring</h1>
-            <p class="slide-left">Different health organizations have different needs.  Fitpeo Health’s platform for Remote Patient Monitoring empowers care where it is needed the most, while delivering advanced program management to set you apart.</p>
+            <h1 class="js-scroll slide-left">Remote Patient Monitoring</h1>
+            <p class="js-scroll slide-left">Different health organizations have different needs.  Fitpeo Health’s platform for Remote Patient Monitoring empowers care where it is needed the most, while delivering advanced program management to set you apart.</p>
             <div class="image1 js-scroll slide-left"></div>
             <button class="btn-contact js-scroll slide-left"> Contact us</button>
         </div>
         <div class="col-sm-6 col-md-6 .p-r-0 section-two">
-          <div class="icon1  slide-right">
+          <div class="icon1 js-scroll slide-right">
             <img src="assets/images/Group2.svg">
           </div>
           
-          <img class=" slide-right" src="assets/images/banner1.svg">
-          <div class="icon2  slide-right">
+          <img class="js-scroll slide-right" src="assets/images/banner1.svg">
+          <div class="icon2 js-scroll slide-right">
           </div>
         </div>
     </div>
@@ -62,15 +65,25 @@
       </div>
   </section>
 
+
   <section class="rpm-banner">
     <!-- <img src="assets/images/rpm-img.jpg"> -->
     <video class="video" autoplay poster="assets/images/rpm-img.jpg" >
-        <source src="./assets/images/bloodpressure.mp4"  type="video/mp4" />
+      <source src="./assets/images/Blood Pressure - 49815.mp4" type="video/mp4">
         <source src="movie.ogg" type="video/ogg">
         Your browser does not support the video tag.
     </video>
-  <div class="playpause"></div>
+    <div class="playpause"></div>
   </section>
+
+  <!-- Current code -->
+  <!-- <section class="rpm-banner">
+    <video autoplay muted loop playsinline height="400">
+      <source src="./assets/images/Blood Pressure - 49815.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+    <div class="playpause"></div>
+  </section> -->
 
   <section class="rpm-process">
     <div class="container-fluid">
@@ -78,7 +91,7 @@
       <p>Vivify Health is transforming healthcare by replacing episodic approaches with the market’s most complete, patient-centered, and holistic connected care platform. Discover how we can help you launch and scale comprehensive, effective remote care programs that create exceptional clinical and financial ROI for chronic and post-acute care as well as wellness management.</p>
    
 
-    <div class="col-sm-6 left-sec p-l-0">
+    <div class="col-sm-6 left-sec p-l-0 " data-aos="fade-up-right"  data-aos-delay="500">
       <p>Setting patients in the right direction for a continued path towards a healthy life is Vivify Health’s main priority.  Using Vivify Pathways (our Remote Care Platform), you can choose from over 90 clinical and engagement pathways or combine them into thousands of programs.  We don’t have one you need?  You can use our intuitive drag-and-drop portal to create your own.</p>
       <p> Scheduling and automating patient encounters to connect, engage, educate, guide, monitor and intervene gives you a great pathway towards success.</p>
       <div class="img-sec-doc">
@@ -86,7 +99,7 @@
       </div>
       
     </div>
-    <div class="col-sm-6 right-sec p-r-0">
+    <div class="col-sm-6 right-sec p-r-0" data-aos="fade-up-left"  data-aos-delay="500">
       <div class="background-sec">
         <img src="assets/images/Outline.svg">
       </div>
@@ -99,41 +112,46 @@
     <div class="container-fluid">
         <h2>Pathway process</h2>
         <p>Much like a transit map, Vivify Health’s dynamic pathways guide patients along check-ins, enable timely interventions and escalations, and even automatically add supplemental care pathways as needed.</p>
-        <div class="image1 js-scroll slide-left scrolled"></div>
 
 
         <div class="col-sm-4 first">
-          <div class="content js-scroll fade-in" data-content="01">
+          <div class="content js-scroll fade-in">
+            <h1>01</h1>
             <h3>Connect</h3>
             <p>Connect with patients using today’s consumer and medical devices.</p>
           </div>
         </div>
         <div class="col-sm-4 first">
-          <div class="content js-scroll fade-in" data-content="02">
+          <div class="content js-scroll fade-in">
+            <h1>02</h1>
             <h3>Engage</h3>
             <p>Engage with patients using captivating and intuitive programs.</p>
         </div>  
         </div>
         <div class="col-sm-4 first">
-          <div class="content js-scroll fade-in" data-content="03">
+          <div class="content js-scroll fade-in">
+            <h1>03</h1>
             <h3>Educate</h3>
             <p>Educate patients with current, relevant and informative content.</p>
         </div>  
         </div>
         <div class="col-sm-4">
-          <div class="content js-scroll fade-in" data-content="04">
+          <div class="content js-scroll fade-in">
+            <h1>04</h1>
             <h3>Guide</h3>
             <p>Guide patient behavior with outcomes-based clinical pathways.</p>
         </div>  
         </div>
         <div class="col-sm-4">
-          <div class="content js-scroll fade-in" data-content="05">
+          <div class="content js-scroll fade-in">
+            <h1>05</h1>
             <h3>Monitor</h3>
             <p>Monitor and alert on patient biometrics, activity and progress along prescribed pathways.</p>
         </div>  
         </div>
         <div class="col-sm-4">
-          <div class="content js-scroll fade-in" data-content="06">
+          <div class="content js-scroll fade-in">
+            <h1>06</h1>
             <h3>Intervene</h3>
             <p>Intervene with patients using messaging, video or phone.</p>
         </div>  
@@ -142,42 +160,41 @@
       </div>
   </section>
 
-  <section class="choose-us">
+  <section class="choose-us" id='counter'>
     <div class="container-fluid">
         <h2>Why choose us</h2>
         <p>Over the last 10 years of actual clinical use, the Fitpeo platform has delivered outstanding, documented performance, including:</p>
 
-
-        <div class="col-sm-8">
+        <div class="col-sm-8" data-aos="flip-down" data-aos-delay="500">
           <h2>Patient Satisfiction</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit aenean tellus, ut egestas pharetra. Gravida ut tellus vitae vitae pretium. Nisi, tempus, felis platea elementum facilisi. Augue velit consectetur blandit pharetra.</p>
         </div>
 
-        <div class="col-sm-4">
-          <h1><span id="count1" class="display-4"></span>%</h1>
+        <div class="col-sm-4" data-aos="flip-up" data-aos-delay="500">
+          <h1 class="counter" data-count="94">94%</h1>
         </div>
 
-        <div class="col-sm-8">
-          <h2>read mission Reduction</h2>
+        <div class="col-sm-8" data-aos="flip-down" data-aos-delay="500">
+          <h2>Read mission Reduction</h2>
           <p>Fitpeo Health customers have experienced up to a 65% reduction in readmissions in as little as 30 days.</p>
         </div>
-        <div class="col-sm-4">
-          <h1><span id="count2" class="display-4"></span>%</h1>
+        <div class="col-sm-4" data-aos="flip-up" data-aos-delay="500">
+          <h1 class="counter" data-count="65">65%</h1>
         </div>
 
-        <div class="col-sm-8">
+        <div class="col-sm-8" data-aos="flip-down" data-aos-delay="500">
           <h2>Return on investment</h2>
           <p>Fitpeo Health customers can see greater than an 8.0x return on investment (ROI).</p>
         </div>
-        <div class="col-sm-4">
-          <h1><span id="count3" class="display-4"></span>X</h1>
+        <div class="col-sm-4" data-aos="flip-up" data-aos-delay="500">
+          <h1 class="counter" data-count="8.0">8.0 X</h1>
         </div>
 
       </div>
   </section>
 
 
-  <section class="get-in-touch">
+  <section class="get-in-touch" data-aos="zoom-in-down">
     <div class="container-fluid">
       <h2>Get in touch with us</h2>
       <p>Are you ready to start remote care, or maybe need just a little more information on what Vivify Health and remote patient management can bring for you?</p>
@@ -218,56 +235,53 @@
   <script>
     const scrollElements = document.querySelectorAll(".js-scroll");
 
-    const elementInView = (el, dividend = 1) => {
-      const elementTop = el.getBoundingClientRect().top;
+const elementInView = (el, dividend = 1) => {
+  const elementTop = el.getBoundingClientRect().top;
 
-      return (
-        elementTop <=
-        (window.innerHeight || document.documentElement.clientHeight) / dividend
-      );
-    };
+  return (
+    elementTop <=
+    (window.innerHeight || document.documentElement.clientHeight) / dividend
+  );
+};
 
-    const elementOutofView = (el) => {
-      const elementTop = el.getBoundingClientRect().top;
+const elementOutofView = (el) => {
+  const elementTop = el.getBoundingClientRect().top;
 
-      return (
-        elementTop > (window.innerHeight || document.documentElement.clientHeight)
-      );
-    };
+  return (
+    elementTop > (window.innerHeight || document.documentElement.clientHeight)
+  );
+};
 
-    const displayScrollElement = (element) => {
-      element.classList.add("scrolled");
-    };
+const displayScrollElement = (element) => {
+  element.classList.add("scrolled");
+};
 
-    const hideScrollElement = (element) => {
-      element.classList.remove("scrolled");
-    };
+const hideScrollElement = (element) => {
+  element.classList.remove("scrolled");
+};
 
-    const handleScrollAnimation = () => {
-      scrollElements.forEach((el) => {
-        if (elementInView(el, 1.25)) {
-          displayScrollElement(el);
-        } else if (elementOutofView(el)) {
-          hideScrollElement(el)
-        }
-      })
+const handleScrollAnimation = () => {
+  scrollElements.forEach((el) => {
+    if (elementInView(el, 1.25)) {
+      displayScrollElement(el);
+    } else if (elementOutofView(el)) {
+      hideScrollElement(el)
     }
-
-    window.addEventListener("scroll", () => { 
-      handleScrollAnimation();
-    });
-  </script>
-  <script>
-      $('.video').parent().click(function () {
-    if($(this).children(".video").get(0).paused)
-    {      
-          $(this).children(".video").get(0).play(); 
-            $(this).children(".playpause").fadeOut();
-      }else{   
-              $(this).children(".video").get(0).pause();
-    $(this).children(".playpause").fadeIn();
-      }
-  });
+  })
+}
+AOS.init();
+window.addEventListener("scroll", (e) => { 
+  handleScrollAnimation();
+});
+document.onreadystatechange = function() {
+    if (document.readyState !== "complete") {
+        document.querySelector("body").style.visibility = "hidden";
+        document.querySelector("#loading").style.visibility = "visible";
+    } else {
+        document.querySelector("#loading").style.display = "none";
+        document.querySelector("body").style.visibility = "visible";
+    }
+};
   </script>
 </body>
 </html>
